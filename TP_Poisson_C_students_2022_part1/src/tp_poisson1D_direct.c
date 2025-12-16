@@ -98,7 +98,7 @@ int main(int argc,char *argv[])
 
   /* LU for tridiagonal matrix (can replace dgbtrf_) - custom implementation */
   if (IMPLEM == TRI) {
-    dgbtrftridiag(&la, &la, &kl, &ku, AB, &lab, ipiv, &info);
+    //dgbtrftridiag(&la, &la, &kl, &ku, AB, &lab, ipiv, &info);
   }
 
   /* Back-substitution to solve the system after factorization */
@@ -115,7 +115,8 @@ int main(int argc,char *argv[])
   /* Alternative: solve directly using dgbsv */
   if (IMPLEM == SV) {
     // TODO : use dgbsv
-    dgbsv_(NULL, &kl, &ku, NULL, AB, &la, NULL, RHS, NULL, NULL);
+    //dgbsv_(&la, &kl, &ku, &NRHS, AB, &lab, ipiv, RHS, &la, &info);
+    //write_GB_operator_colMajor_poisson1D(AB, &lab, &la, "DBGSV.dat");
   }
 
   /* Write results to files */
