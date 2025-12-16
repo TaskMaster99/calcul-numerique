@@ -1,0 +1,13 @@
+\section{Methode directe et stockage bande}
+\subsection{Exercice 3}
+\begin{enumerate}
+    \item Une matrice doit être en 1D (matrice linéarisée).
+    \item LAPACK\_COL\_MAJOR spécifie le type de rangement des données, i.e. colonne.
+    \item Le \textit{leading dimension} correspond à l'offset pour passer de ligne en ligne ou de colonne en colonne.\\
+          Pour un type de rangement en column major, le leading dimension est le nombre de lignes.\\
+          Pour un type de rangement en row major, le leading dimension est le nombre de colonnes.
+    \item dgbmv est une fonction qui effectue une multiplication matrice vecteur
+    \item dgbtrf est une fonction qui effectue une factorisation LU.
+    \item dgbtrs est une focntion qui effectue une resolution d'un systeme lineaire Ax = b
+    \item dgbsv est une fonction qui effectue une resolution d'un systeme lineaire Ax = b avec A une matrice bande
+\end{enumerate}
