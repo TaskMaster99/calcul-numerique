@@ -56,7 +56,7 @@ void set_analytical_solution_DBC_1D(double* EX_SOL, double* X, int* la, double* 
   // This depends on the source term f(x) used in set_dense_RHS_DBC_1D
 
   for(size_t i = 1; i < (*la - 1); ++i)
-    EX_SOL[i] = *BC0 + i *(*BC1 - *BC0);
+    EX_SOL[i] = *BC0 + X[i] *(*BC1 - *BC0);
 }  
 
 void set_grid_points_1D(double* x, int* la){

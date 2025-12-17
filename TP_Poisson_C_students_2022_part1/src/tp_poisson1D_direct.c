@@ -115,8 +115,8 @@ int main(int argc,char *argv[])
   /* Alternative: solve directly using dgbsv */
   if (IMPLEM == SV) {
     // TODO : use dgbsv
-    //dgbsv_(&la, &kl, &ku, &NRHS, AB, &lab, ipiv, RHS, &la, &info);
-    //write_GB_operator_colMajor_poisson1D(AB, &lab, &la, "DBGSV.dat");
+    dgbsv_(&la, &kl, &ku, &NRHS, AB, &lab, ipiv, RHS, &la, &info);
+    write_GB_operator_colMajor_poisson1D(AB, &lab, &la, "DBGSV.dat");
   }
 
   /* Write results to files */
