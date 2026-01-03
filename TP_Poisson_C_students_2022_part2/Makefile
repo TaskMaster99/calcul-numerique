@@ -40,8 +40,8 @@ INCL= -I $(TPDIR)/include $(INCLATLAS)
 ############
 #
 SOL?=
+OBJENV= tp_env.o
 OBJLIBPOISSON= lib_poisson1D$(SOL).o lib_poisson1D_writers.o lib_poisson1D_richardson$(SOL).o
-OBJENV= $(OBJLIBPOISSON) tp_env.o
 OBJTP2ITER= $(OBJLIBPOISSON) tp_poisson1D_iter.o
 OBJTP2DIRECT= $(OBJLIBPOISSON) tp_poisson1D_direct.o
 #
@@ -75,13 +75,14 @@ run_tpPoisson1D_iter:
 	bin/tpPoisson1D_iter
 	bin/tpPoisson1D_iter 1
 	bin/tpPoisson1D_iter 2
+	cat ERR_RI.dat
 
 run_tpPoisson1D_direct:
-	bin/tpPoisson1D_direct 0
+	bin/tpPoisson1D_direct
 	bin/tpPoisson1D_direct 1
 	bin/tpPoisson1D_direct 2
 	bin/tpPoisson1D_direct 3
-
-
+	cat CUSTLU.dat
+	cat LACKLU.dat
 clean:
 	rm *.o bin/*

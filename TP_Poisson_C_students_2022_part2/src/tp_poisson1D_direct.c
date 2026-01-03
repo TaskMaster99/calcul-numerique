@@ -92,7 +92,8 @@ int main(int argc,char *argv[])
 
   /* LU for tridiagonal matrix (can replace dgbtrf_) - custom implementation */
   if (IMPLEM == TRI) {
-    //dgbtrftridiag(&la, &la, &kl, &ku, AB, &lab, ipiv, &info);
+    dgbtrftridiag(&la, &la, &kl, &ku, AB, &lab, ipiv, &info);
+    write_GB_operator_colMajor_poisson1D(AB, &lab, &la, "CUSTLU.dat");
   }
 
   if(IMPLEM == IDP)
